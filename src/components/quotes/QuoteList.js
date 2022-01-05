@@ -13,7 +13,7 @@ const QuoteList = (props) => {
     if (isAscend) return quotes.sort((q1, q2) => (q2.text >= q1.text ? 1 : -1));
     else return quotes.sort((q1, q2) => (q1.text >= q2.text ? 1 : -1));
   }, [quotes, isAscend]);
-  console.debug(props.quotes, sortedQuotes);
+  // console.debug(props.quotes, sortedQuotes);
 
   const onClickHandler = () => {
     setIsAscend(!isAscend);
