@@ -34,9 +34,15 @@ function App() {
   }, [FetchQuoteHandler]);
 
   const onAddQuoteHandler = (newQuote) => {
-    setQuoteList((prev) => [...prev, newQuote]);
+    const theQuote = { id: Math.random(), ...newQuote };
+    setQuoteList((prev) => {
+      const newList = [...prev, theQuote];
+      // console.debug(theQuote, newList);
+      return newList;
+    });
   };
   const sortQuoteList = () => {};
+  const whichpath = quoteList.length === 0 ? "/add" : "/quotes";
 
   return (
     <div>
@@ -53,7 +59,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Redirect to="/quotes" />
+          <Redirect to={whichpath} />
         </Route>
       </main>
     </div>
