@@ -1,12 +1,13 @@
-import classes from './NoQuotesFound.module.css';
+import { NavLink } from "react-router-dom";
+import classes from "./NoQuotesFound.module.css";
 
 const NoQuotesFound = () => {
   return (
     <div className={classes.noquotes}>
       <p>No quotes found!</p>
-      <a className='btn'>
+      <NavLink className="btn" to="/add">
         Add a Quote
-      </a>
+      </NavLink>
     </div>
   );
 };
