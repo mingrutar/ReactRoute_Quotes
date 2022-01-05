@@ -41,7 +41,6 @@ function App() {
       return newList;
     });
   };
-  const sortQuoteList = () => {};
   const whichpath = quoteList.length === 0 ? "/add" : "/quotes";
 
   return (
@@ -52,7 +51,7 @@ function App() {
           <QuoteForm isLoading={isLoading} onAddQuote={onAddQuoteHandler} />
         </Route>
         <Route path="/quotes" exact>
-          <QuoteList quotes={quoteList} sorter={sortQuoteList} />
+          <QuoteList quotes={quoteList} />
         </Route>
         <Route path="/quotes/:quoteId">
           <QuoteItem />
